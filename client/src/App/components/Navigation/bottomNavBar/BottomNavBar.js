@@ -8,10 +8,14 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { GiCheckedShield, GiSpinningSword, GiSpawnNode, GiFireSpellCast } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const styles = {
   root: {
-    width: 500,
+    width: '100%',
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
   },
   iconSize:{
   }
@@ -35,10 +39,18 @@ class LabelBottomNavigation extends React.Component {
 
     return (
       <BottomNavigation value={value} onChange={this.handleChange} className={classes.root}>
-        <BottomNavigationAction label="Build" value="recents" icon={<GiSpawnNode size={23} />} />
-        <BottomNavigationAction label="Atack" value="favorites" icon={<GiSpinningSword size={23} />} />
-        <BottomNavigationAction label="Defense" value="nearby" icon={<GiCheckedShield size={23} />} />
-        <BottomNavigationAction label="Magic" value="folder" icon={<GiFireSpellCast size={23} />} />
+        <Link to={'./sex'}>
+          <BottomNavigationAction label="Build" value="recents" icon={<GiSpawnNode size={23} />} />
+        </Link>
+        <Link to={'./'}>
+          <BottomNavigationAction label="Atack" value="favorites" icon={<GiSpinningSword size={23} />} />
+        </Link>
+        <Link to={'./'}>
+          <BottomNavigationAction label="Defense" value="nearby" icon={<GiCheckedShield size={23} />} />
+        </Link>
+        <Link to={'./'}>
+          <BottomNavigationAction label="Magic" value="folder" icon={<GiFireSpellCast size={23} />} />
+        </Link>
       </BottomNavigation>
     );
   }
